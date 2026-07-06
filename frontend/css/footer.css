@@ -1,0 +1,81 @@
+/*=========================================
+            FOOTER
+=========================================*/
+
+footer{
+
+    padding-top:80px;
+
+    border-top:1px solid var(--border-color);
+
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:60px;
+
+    padding-bottom:50px;
+
+}
+
+.footer-container h2 span{
+
+    color:var(--primary-color);
+
+}
+
+.footer-container p{
+
+    color:var(--gray-light);
+
+    margin-top:20px;
+
+    line-height:1.8;
+
+}
+
+.footer-container h4{
+
+    margin-bottom:20px;
+
+}
+
+.footer-container ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.footer-container a{
+
+    color:var(--gray-light);
+
+    transition:.3s;
+
+}
+
+.footer-container a:hover{
+
+    color:var(--primary-color);
+
+}
+
+.copyright{
+
+    border-top:1px solid var(--border-color);
+
+    text-align:center;
+
+    padding:25px;
+
+    color:var(--gray-light);
+
+}

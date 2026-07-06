@@ -1,0 +1,65 @@
+/*=========================================
+            ANIMATIONS
+=========================================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.dashboard-card{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes floatOrb{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-30px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.background-orb{
+
+    animation:floatOrb 8s ease-in-out infinite;
+
+}
+
+.orb-2{
+
+    animation-delay:3s;
+
+}

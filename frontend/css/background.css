@@ -1,0 +1,147 @@
+/*=========================================
+        GLOBAL BACKGROUND
+=========================================*/
+
+body{
+
+    position:relative;
+
+    overflow-x:hidden;
+
+}
+
+/* Green Glow */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:550px;
+
+    height:550px;
+
+    top:-180px;
+
+    left:-180px;
+
+    background:rgba(34,197,94,.12);
+
+    filter:blur(130px);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+/* Blue Glow */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+
+    height:600px;
+
+    bottom:-250px;
+
+    right:-220px;
+
+    background:rgba(59,130,246,.10);
+
+    filter:blur(150px);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+/*=========================================
+        GRID BACKGROUND
+=========================================*/
+
+body{
+
+    background-color:var(--background-color);
+
+    background-image:
+
+    linear-gradient(
+
+        rgba(255,255,255,.025) 1px,
+
+        transparent 1px
+
+    ),
+
+    linear-gradient(
+
+        90deg,
+
+        rgba(255,255,255,.025) 1px,
+
+        transparent 1px
+
+    );
+
+    background-size:60px 60px;
+
+}
+
+/*=========================================
+        FLOATING ORBS
+=========================================*/
+
+.background-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.18;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+}
+
+.orb-1{
+
+    width:250px;
+
+    height:250px;
+
+    background:#22C55E;
+
+    top:120px;
+
+    left:8%;
+
+}
+
+.orb-2{
+
+    width:300px;
+
+    height:300px;
+
+    background:#3B82F6;
+
+    top:500px;
+
+    right:5%;
+
+}

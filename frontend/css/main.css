@@ -1,0 +1,72 @@
+@import url("variables.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+/*=========================================
+RESET
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--background-color);
+    color:var(--white);
+    font-family:var(--body-font);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+    border:none;
+}
+
+.container{
+    width:min(1280px,90%);
+    margin:auto;
+}
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+    font-size:2.5rem;
+    font-family:var(--heading-font);
+}
+
+.text-center{
+    text-align:center;
+}
+
+main{
+    margin-top:80px;
+}
+
+svg{
+
+    display:block;
+
+}
