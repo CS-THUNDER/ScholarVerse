@@ -1,62 +1,92 @@
-# ScholarVerse
+# 🎓 ScholarVerse
 
-Study Smarter. Compete Better. Grow Together.
+> **Study Smarter. Compete Better. Grow Together.**
 
-A modern gamified learning platform that helps students
-plan, track and improve their academic journey.
+A modern gamified learning platform designed to transform the way students learn, collaborate, and achieve their academic goals.
 
-Features
+ScholarVerse combines **AI-powered study planning**, **gamification**, **community learning**, and **career opportunities** into a single platform built for students.
 
-✔ Smart Study Planner
+---
 
-✔ XP System
+## 🚀 Project Status
 
-✔ Badges
+> **Currently Under Active Development**
 
-✔ Community
+### Completed ✅
 
-✔ Leaderboards
+- Modern Landing Page
+- Responsive UI
+- Modular CSS Architecture
+- Design System
+- Lucide Icons
+- Project Documentation
 
-✔ Adaptive Planning
+### In Progress 🚧
 
-✔ Progress Analytics
+- Authentication System
+- Backend Development
+- MongoDB Integration
 
-Tech Stack
+### Upcoming 📌
 
-Frontend
+- Smart Study Planner
+- XP & Badge System
+- Community
+- Career Hub
+- AI Study Coach
+- Leaderboard
 
-HTML
+## 📸 Preview
 
-CSS
+### Desktop
 
-JavaScript
+![Desktop](docs/screenshots/desktop.png)
 
-Backend
+### Tablet
 
-Node.js
+![Tablet](docs/screenshots/tablet.png)
 
-Express.js
+### Mobile
 
-MongoDB
+![Mobile](docs/screenshots/mobile.png)
 
-Authentication
+## ✨ Features
 
-JWT
+### 🎯 Smart Learning
 
-bcrypt
+- AI-powered study planner
+- Adaptive study schedule
+- Daily missions
+- Revision reminders
 
-Status
+### 🎮 Gamification
 
-Phase 1 Completed
+- XP System
+- Level Progression
+- Badges
+- Daily Streaks
+- Achievements
 
-Landing Page
+### 👥 Community
 
-Upcoming
+- Discussion Feed
+- Study Groups
+- Peer Support
+- Mentor Guidance
 
-Authentication
+### 💼 Career Hub
 
-Dashboard
+- Job Updates
+- Internship Opportunities
+- Scholarships
+- Hackathons
+- Placement Experiences
+- Certification Resources
 
-Planner
+### 📊 Analytics
 
-Community
+- Progress Dashboard
+- Learning Insights
+- Weekly Reports
+- Study Statistics
+
