@@ -711,3 +711,13 @@ transform:translateY(0);
     transform:scale(.97);
 
 }
+
+#message{
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
