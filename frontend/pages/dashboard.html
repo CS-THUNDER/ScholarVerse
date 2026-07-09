@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | ScholarVerse</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <div id="sidebar"></div>
+
+        <main class="dashboard-main">
+
+            <div id="navbar"></div>
+
+            <section id="dashboardContent">
+            
+                <!-- Hero Section -->
+            
+                <section class="hero-section">
+            
+                    <div class="hero-left">
+            
+                        <span class="hero-badge">
+            
+                            🚀 ScholarVerse Dashboard
+            
+                        </span>
+            
+                        <h1 id="greeting">
+            
+                            Good Afternoon, Student 👋
+            
+                        </h1>
+            
+                        <p>
+            
+                            Stay consistent. Complete your daily goals and level up your learning journey.
+            
+                        </p>
+            
+                    </div>
+            
+                </section>
+            
+                <!-- Statistics -->
+            
+                <section class="stats-grid">
+            
+                    <div class="card stat-card">
+            
+                        <div class="stat-icon">🔥</div>
+            
+                        <div>
+            
+                            <h2 id="streakValue">0</h2>
+            
+                            <p>Day Streak</p>
+            
+                        </div>
+            
+                    </div>
+            
+                    <div class="card stat-card">
+            
+                        <div class="stat-icon">⭐</div>
+            
+                        <div>
+            
+                            <h2 id="xpValue">0</h2>
+            
+                            <p>Total XP</p>
+            
+                        </div>
+            
+                    </div>
+            
+                    <div class="card stat-card">
+            
+                        <div class="stat-icon">🏆</div>
+            
+                        <div>
+            
+                            <h2 id="levelValue">1</h2>
+            
+                            <p>Current Level</p>
+            
+                        </div>
+            
+                    </div>
+            
+                    <div class="card stat-card">
+            
+                        <div class="stat-icon">📚</div>
+            
+                        <div>
+            
+                            <h2 id="taskValue">0</h2>
+            
+                            <p>Today's Tasks</p>
+            
+                        </div>
+            
+                    </div>
+            
+                </section>
+
+                <section class="dashboard-grid">
+                
+                    <div class="card">
+                
+                        <h3>📅 Today's Planner</h3>
+                
+                        <p>No tasks scheduled.</p>
+                
+                        <button class="dashboard-btn">
+                
+                            + Add Task
+                
+                        </button>
+                
+                    </div>
+                
+                    <div class="card">
+                
+                        <h3>📝 Upcoming Exams</h3>
+                
+                        <p>No upcoming exams.</p>
+                
+                        <button class="dashboard-btn">
+                
+                            + Add Exam
+                
+                        </button>
+                
+                    </div>
+                
+                    <div class="card">
+                
+                        <h3>🏆 Leaderboard</h3>
+                
+                        <p>Your Rank: --</p>
+                
+                    </div>
+                
+                    <div class="card">
+                
+                        <h3>👥 Community</h3>
+                
+                        <p>Latest discussions will appear here.</p>
+                
+                    </div>
+                
+                    <div class="card">
+                
+                        <h3>💼 Career Hub</h3>
+                
+                        <p>Internships & Jobs coming soon.</p>
+                
+                    </div>
+                
+                </section>
+            
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script src="../js/api/api.js"></script>
+    <script src="../js/utils/auth.js"></script>
+
+    <script src="../js/components/sidebar.js"></script>
+    <script src="../js/components/navbar.js"></script>
+
+    <script src="../js/dashboard/dashboard.js"></script>
+
+</body>
+
+</html>

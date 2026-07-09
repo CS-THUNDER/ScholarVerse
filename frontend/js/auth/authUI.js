@@ -1,4 +1,13 @@
-console.log("ScholarVerse Authentication Loaded 🚀");
+/*
+==========================================
+ScholarVerse
+File: authUI.js
+Description: Authentication UI
+Author: Sudip Pattanayak
+==========================================
+*/
+
+console.log("ScholarVerse Authentication UI Loaded 🚀");
 
 /*=========================================
         FEATURE CAROUSEL
@@ -35,23 +44,26 @@ const slides = [
   },
 ];
 
-const card = document.querySelector(".feature-card");
+const featureCard = document.querySelector(".feature-card");
 const dots = document.querySelectorAll(".dot");
 
-if (card && dots.length > 0) {
-  let current = 0;
-  let interval;
+if (featureCard && dots.length > 0) {
+  let currentSlide = 0;
+
+  let sliderInterval;
 
   function renderSlide(index) {
     const slide = slides[index];
 
-    card.classList.remove("show");
+    featureCard.classList.remove("show");
 
     setTimeout(() => {
-      card.innerHTML = `
+      featureCard.innerHTML = `
 
         <div class="feature-icon">
+
             <i data-lucide="${slide.icon}"></i>
+
         </div>
 
         <div class="feature-content">
@@ -62,7 +74,9 @@ if (card && dots.length > 0) {
 
             <ul>
 
-                ${slide.features.map((item) => `<li>✔ ${item}</li>`).join("")}
+                ${slide.features
+                  .map((feature) => `<li>✔ ${feature}</li>`)
+                  .join("")}
 
             </ul>
 
@@ -76,39 +90,41 @@ if (card && dots.length > 0) {
         dot.classList.toggle("active", i === index);
       });
 
-      card.classList.add("show");
+      featureCard.classList.add("show");
     }, 250);
   }
 
   function nextSlide() {
-    current++;
+    currentSlide++;
 
-    if (current >= slides.length) current = 0;
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
 
-    renderSlide(current);
+    renderSlide(currentSlide);
   }
 
   function startSlider() {
-    interval = setInterval(nextSlide, 5000);
+    sliderInterval = setInterval(nextSlide, 5000);
   }
 
   function stopSlider() {
-    clearInterval(interval);
+    clearInterval(sliderInterval);
   }
 
-  renderSlide(current);
+  renderSlide(currentSlide);
 
   startSlider();
 
-  card.addEventListener("mouseenter", stopSlider);
+  featureCard.addEventListener("mouseenter", stopSlider);
 
-  card.addEventListener("mouseleave", startSlider);
+  featureCard.addEventListener("mouseleave", startSlider);
 
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
-      current = index;
+      currentSlide = index;
 
-      renderSlide(current);
+      renderSlide(currentSlide);
 
       stopSlider();
 
@@ -122,15 +138,16 @@ if (card && dots.length > 0) {
 =========================================*/
 
 const passwordInput = document.getElementById("password");
+
 const togglePassword = document.getElementById("togglePassword");
 
 if (passwordInput && togglePassword) {
   togglePassword.addEventListener("click", () => {
-    const hidden = passwordInput.type === "password";
+    const isHidden = passwordInput.type === "password";
 
-    passwordInput.type = hidden ? "text" : "password";
+    passwordInput.type = isHidden ? "text" : "password";
 
-    togglePassword.innerHTML = hidden
+    togglePassword.innerHTML = isHidden
       ? '<i data-lucide="eye-off"></i>'
       : '<i data-lucide="eye"></i>';
 

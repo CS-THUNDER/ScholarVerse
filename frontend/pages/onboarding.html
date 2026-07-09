@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Onboarding | ScholarVerse</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="../css/variables.css">
+
+    <link rel="stylesheet"
+          href="../css/main.css">
+
+    <link rel="stylesheet"
+          href="../css/background.css">
+
+    <link rel="stylesheet"
+          href="../css/onboarding.css">
+
+</head>
+
+<body>
+
+<div class="onboarding-page">
+
+    <!-- Background -->
+
+    <div class="background-blur blur-1"></div>
+
+    <div class="background-blur blur-2"></div>
+
+    <!-- Main Card -->
+
+    <section class="onboarding-card">
+
+        <!-- Header -->
+
+        <div class="onboarding-header">
+
+            <a href="../index.html"
+               class="logo">
+
+                Scholar<span>Verse</span>
+
+            </a>
+
+            <span class="step-counter">
+
+                Step
+                <span id="currentStep">
+
+                    1
+
+                </span>
+
+                of 5
+
+            </span>
+
+        </div>
+
+        <!-- Welcome -->
+
+        <div class="welcome">
+
+            <h1>
+
+                Welcome to ScholarVerse 👋
+
+            </h1>
+
+            <p>
+
+                Let's personalize your learning journey.
+
+            </p>
+
+        </div>
+
+        <!-- Progress -->
+
+        <div class="progress-container">
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"
+                     id="progressFill">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Dynamic Step -->
+
+        <div id="stepContainer">
+
+        </div>
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <button
+                id="prevBtn"
+                class="secondary-btn">
+
+                ← Previous
+
+            </button>
+
+            <button
+                id="nextBtn"
+                class="primary-btn">
+
+                Continue →
+
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/api/api.js"></script>
+
+<script src="../js/utils/auth.js"></script>
+
+<script src="../js/onboarding/onboarding.js"></script>
+
+</body>
+
+</html>

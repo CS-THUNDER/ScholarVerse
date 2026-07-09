@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planner | ScholarVerse</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/planner.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <div id="sidebar"></div>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+
+            <!-- Navbar -->
+            <div id="navbar"></div>
+
+            <!-- Planner Header -->
+            <section class="planner-header">
+
+                <div>
+
+                    <h1>📅 Study Planner</h1>
+
+                    <p>
+                        Organize your study schedule and stay productive.
+                    </p>
+
+                </div>
+
+                <button id="addTaskBtn" class="primary-btn">
+
+                    + Add Task
+
+                </button>
+
+            </section>
+
+            <!-- Task List -->
+
+            <section id="taskContainer" class="task-grid">
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ===============================
+            TASK MODAL
+    ================================ -->
+
+    <div class="modal-overlay" id="taskModal">
+
+        <div class="task-modal">
+
+            <h2 id="modalTitle">
+
+                Create Study Task
+
+            </h2>
+
+            <form id="taskForm">
+
+                <!-- Hidden Task ID -->
+                <input type="hidden" id="taskId">
+
+                <div class="form-group">
+
+                    <label for="taskTitle">
+
+                        Task Title
+
+                    </label>
+
+                    <input type="text" id="taskTitle" placeholder="Complete DBMS Assignment" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="taskDescription">
+
+                        Description
+
+                    </label>
+
+                    <textarea id="taskDescription" rows="4" placeholder="Optional"></textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="taskDueDate">
+
+                        Due Date
+
+                    </label>
+
+                    <input type="date" id="taskDueDate" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="taskPriority">
+
+                        Priority
+
+                    </label>
+
+                    <select id="taskPriority">
+
+                        <option value="Low">
+
+                            Low
+
+                        </option>
+
+                        <option value="Medium" selected>
+
+                            Medium
+
+                        </option>
+
+                        <option value="High">
+
+                            High
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="modal-buttons">
+
+                    <button type="button" id="closeModal" class="secondary-btn">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="submit" id="submitTaskBtn" class="primary-btn">
+
+                        Create Task
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="../js/api/api.js"></script>
+
+    <script src="../js/utils/auth.js"></script>
+
+    <script src="../js/components/sidebar.js"></script>
+
+    <script src="../js/components/navbar.js"></script>
+
+    <script src="../js/planner/planner.js"></script>
+
+</body>
+
+</html>

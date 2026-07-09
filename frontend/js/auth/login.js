@@ -8,37 +8,21 @@ loginForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
+    const data = await AuthAPI.login({
+      email,
+      password,
     });
 
-    const data = await response.json();
+    Auth.saveToken(data.token);
 
-    if (data.success) {
-      // Save JWT
-      localStorage.setItem("token", data.token);
+    Auth.saveUser(data.user);
 
-      // Save user
-      localStorage.setItem("user", JSON.stringify(data.user));
+    messageBox.innerHTML = "✅ Login Successful!";
 
-      messageBox.innerHTML = "✅ Login Successful!";
-
-      setTimeout(() => {
-        window.location.href = "onboarding.html";
-      }, 1200);
-    } else {
-      messageBox.innerHTML = `❌ ${data.message}`;
-    }
+    setTimeout(() => {
+      window.location.href = "onboarding.html";
+    }, 1200);
   } catch (error) {
-    console.error(error);
-
-    messageBox.innerHTML = "❌ Server Error";
+    messageBox.innerHTML = `❌ ${error.message}`;
   }
 });

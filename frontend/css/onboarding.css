@@ -1,0 +1,718 @@
+/*
+==========================================
+ScholarVerse
+Onboarding Page
+Author : Sudip Pattanayak
+==========================================
+*/
+
+/* ===========================
+   PAGE
+=========================== */
+
+.onboarding-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* ===========================
+   CARD
+=========================== */
+
+.onboarding-card{
+
+    width:100%;
+
+    max-width:900px;
+
+    min-height:680px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    background:rgba(18,18,18,.72);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.45);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+.onboarding-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+
+.logo span{
+
+    color:var(--primary-color);
+
+}
+
+
+.step-counter{
+
+    color:#cfcfcf;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+/* ===========================
+   WELCOME
+=========================== */
+
+.welcome{
+
+    text-align:center;
+
+    margin-top:45px;
+
+}
+
+
+.welcome h1{
+
+    font-size:42px;
+
+    color:white;
+
+    font-family:Poppins;
+
+}
+
+
+.welcome p{
+
+    margin-top:15px;
+
+    color:#bdbdbd;
+
+    font-size:17px;
+
+}
+
+
+/* ===========================
+   PROGRESS BAR
+=========================== */
+
+.progress-container{
+
+    margin-top:45px;
+
+}
+
+
+.progress-bar{
+
+    width:100%;
+
+    height:10px;
+
+    border-radius:30px;
+
+    background:#242424;
+
+    overflow:hidden;
+
+}
+
+
+.progress-fill{
+
+    width:20%;
+
+    height:100%;
+
+    background:linear-gradient(
+    90deg,
+    #00d26a,
+    #31ff95);
+
+    border-radius:30px;
+
+    transition:.4s;
+
+}
+
+
+/* ===========================
+   STEP CONTAINER
+=========================== */
+
+#stepContainer{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:40px;
+
+}
+
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:20px;
+
+}
+
+
+.secondary-btn{
+
+    border:none;
+
+    outline:none;
+
+    background:#262626;
+
+    color:white;
+
+    padding:15px 28px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.secondary-btn:hover{
+
+    background:#363636;
+
+}
+
+
+.primary-btn{
+
+    border:none;
+
+    outline:none;
+
+    background:linear-gradient(
+    135deg,
+    #00d26a,
+    #00ff88);
+
+    color:white;
+
+    padding:15px 36px;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 15px 30px rgba(0,210,106,.35);
+
+}
+
+/*=========================================
+        STEP CONTENT
+=========================================*/
+
+.step-content{
+
+    width:100%;
+
+    animation:fadeIn .45s ease;
+
+}
+
+.step-title{
+
+    font-size:32px;
+
+    color:#fff;
+
+    font-weight:700;
+
+    text-align:center;
+
+    margin-bottom:12px;
+
+}
+
+.step-description{
+
+    text-align:center;
+
+    color:#bcbcbc;
+
+    margin-bottom:40px;
+
+    font-size:16px;
+
+}
+
+
+/*=========================================
+        CARD GRID
+=========================================*/
+
+.option-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+}
+
+
+/*=========================================
+        OPTION CARD
+=========================================*/
+
+.option-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    min-height:170px;
+
+    user-select:none;
+
+}
+
+.option-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary-color);
+
+    box-shadow:
+
+    0 15px 40px rgba(0,210,106,.25);
+
+}
+
+.option-card.active{
+
+    border:2px solid var(--primary-color);
+
+    background:rgba(0,210,106,.12);
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 20px 45px rgba(0,210,106,.35);
+
+}
+
+
+/*=========================================
+        ICON
+=========================================*/
+
+.option-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,210,106,.15);
+
+}
+
+.option-icon svg{
+
+    width:34px;
+
+    height:34px;
+
+    color:var(--primary-color);
+
+}
+
+
+/*=========================================
+        CARD TITLE
+=========================================*/
+
+.option-card h3{
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.option-card p{
+
+    color:#bfbfbf;
+
+    text-align:center;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+}
+
+/*=========================================
+        SEMESTER GRID
+=========================================*/
+
+.semester-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.semester-card{
+
+    height:110px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.semester-card:hover{
+
+    background:rgba(0,210,106,.12);
+
+    border-color:var(--primary-color);
+
+    transform:translateY(-5px);
+
+}
+
+.semester-card.active{
+
+    background:var(--primary-color);
+
+    color:#fff;
+
+}
+
+
+/*=========================================
+        SELECT
+=========================================*/
+
+.select-box{
+
+    width:100%;
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+.select-box select{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:#1d1d1d;
+
+    color:white;
+
+    font-size:17px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.select-box select:focus{
+
+    border-color:var(--primary-color);
+
+}
+
+/*=========================================
+        LOADING
+=========================================*/
+
+.loading-screen{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.loading-circle{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,.12);
+
+    border-top:6px solid var(--primary-color);
+
+    animation:spin 1s linear infinite;
+
+}
+
+.loading-screen h2{
+
+    color:white;
+
+}
+
+.loading-screen p{
+
+    color:#bfbfbf;
+
+}
+
+
+/*=========================================
+        ANIMATION
+=========================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:900px){
+
+.option-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.semester-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.onboarding-card{
+
+padding:28px;
+
+}
+
+.welcome h1{
+
+font-size:30px;
+
+}
+
+.option-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.semester-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.navigation{
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.primary-btn,
+
+.secondary-btn{
+
+width:100%;
+
+}
+
+}

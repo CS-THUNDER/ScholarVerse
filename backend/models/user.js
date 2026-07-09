@@ -11,6 +11,10 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
+    // ===========================
+    // Basic Authentication
+    // ===========================
+
     fullName: {
       type: String,
       required: true,
@@ -29,9 +33,76 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
 
+    // ===========================
+    // User Role
+    // ===========================
+
+    role: {
+      type: String,
+      enum: ["student", "teacher", "admin"],
+      default: "student",
+    },
+
+    // ===========================
+    // Onboarding
+    // ===========================
+
     profileCompleted: {
       type: Boolean,
       default: false,
+    },
+
+    course: {
+      type: String,
+      default: "",
+    },
+
+    semester: {
+      type: Number,
+      default: 0,
+    },
+
+    university: {
+      type: String,
+      default: "",
+    },
+
+    goal: {
+      type: String,
+      default: "",
+    },
+
+    experience: {
+      type: String,
+      default: "",
+    },
+
+    // ===========================
+    // Gamification
+    // ===========================
+
+    xp: {
+      type: Number,
+      default: 0,
+    },
+
+    level: {
+      type: Number,
+      default: 1,
+    },
+
+    streak: {
+      type: Number,
+      default: 0,
+    },
+
+    // ===========================
+    // Profile
+    // ===========================
+
+    avatar: {
+      type: String,
+      default: "",
     },
   },
   {
@@ -40,9 +111,3 @@ const userSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("User", userSchema);
-
-module.exports = mongoose.model(
-  "User",
-
-  userSchema,
-);
