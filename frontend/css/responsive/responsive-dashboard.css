@@ -1,0 +1,23 @@
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:900px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.navbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+}

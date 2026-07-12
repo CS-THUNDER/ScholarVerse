@@ -141,3 +141,16 @@ const PlannerAPI = {
 
 };
 
+/*=========================================
+        DASHBOARD API
+=========================================*/
+
+const DashboardAPI = {
+
+    getDashboard() {
+
+        return apiRequest("/dashboard");
+
+    }
+
+};

@@ -1,0 +1,29 @@
+/*=========================================
+        CARD
+=========================================*/
+
+.card{
+
+    background:#1b2232;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#00d26a;
+
+    box-shadow:
+
+    0 20px 35px rgba(0,210,106,.15);
+
+}

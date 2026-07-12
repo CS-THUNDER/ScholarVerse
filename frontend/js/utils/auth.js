@@ -7,6 +7,10 @@ Author: Sudip Pattanayak
 */
 
 const Auth = {
+  /*=====================================
+            TOKEN
+    =====================================*/
+
   saveToken(token) {
     localStorage.setItem("token", token);
   },
@@ -15,13 +19,37 @@ const Auth = {
     return localStorage.getItem("token");
   },
 
+  /*=====================================
+            USER
+    =====================================*/
+
   saveUser(user) {
+    if (!user) return;
+
     localStorage.setItem("user", JSON.stringify(user));
   },
 
   getUser() {
-    return JSON.parse(localStorage.getItem("user"));
+    const user = localStorage.getItem("user");
+
+    if (!user || user === "undefined") {
+      return null;
+    }
+
+    try {
+      return JSON.parse(user);
+    } catch (error) {
+      console.error("Invalid user data in localStorage.");
+
+      localStorage.removeItem("user");
+
+      return null;
+    }
   },
+
+  /*=====================================
+            AUTH
+    =====================================*/
 
   logout() {
     localStorage.removeItem("token");
