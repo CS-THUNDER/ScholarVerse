@@ -47,12 +47,19 @@ async function loadDashboard() {
 
     // Update dashboard
     updateGreeting(user);
+
     updateStats(stats);
+
     updateProfileWidgets(profile);
+
     renderPlannerWidget(recentTasks);
+
     updateProgress(stats);
+
     renderRecentActivity(recentTasks);
-  } catch (error) {
+
+  } 
+  catch (error) {
     console.error("Dashboard Error:", error);
     showDashboardError(error.message);
   }
