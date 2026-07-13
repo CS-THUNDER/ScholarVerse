@@ -1,0 +1,95 @@
+/*=========================================
+        TOAST
+=========================================*/
+
+.toast-container{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    z-index:9999;
+
+}
+
+.toast{
+
+    min-width:320px;
+
+    background:#1b2232;
+
+    border-left:5px solid #00d26a;
+
+    color:white;
+
+    padding:18px 22px;
+
+    border-radius:14px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+    animation:toastSlide .35s ease;
+
+}
+
+.toast.success{
+
+    border-color:#00d26a;
+
+}
+
+.toast.error{
+
+    border-color:#ef4444;
+
+}
+
+.toast.warning{
+
+    border-color:#f59e0b;
+
+}
+
+.toast h4{
+
+    margin-bottom:6px;
+
+    font-size:16px;
+
+}
+
+.toast p{
+
+    color:#aab4c7;
+
+    font-size:14px;
+
+}
+
+@keyframes toastSlide{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}

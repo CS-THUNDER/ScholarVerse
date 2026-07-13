@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadTasks();
 });
+let allTasks = [];
+
+let deleteTaskId = null;
 
 /*=========================================
         LOAD TASKS
@@ -35,7 +38,11 @@ async function loadTasks() {
       throw new Error("Failed to load tasks.");
     }
 
-    renderTasks(data.tasks);
+    allTasks = data.tasks;
+
+    updatePlannerStats(allTasks);
+
+    applyFilters();
   } catch (error) {
     console.error(error);
 
@@ -67,15 +74,33 @@ function renderTasks(tasks) {
 
             <div class="empty-state">
 
-                <h2>No Tasks Yet 📚</h2>
+    <div style="font-size:70px">
 
-                <p>
+        📚
 
-                    Click "Add Task" to create your first study task.
+    </div>
 
-                </p>
+    <h2>
 
-            </div>
+        Your Planner is Empty
+
+    </h2>
+
+    <p>
+
+        Start organizing your study journey by creating your first task.
+
+    </p>
+
+    <button
+        class="primary-btn"
+        onclick="document.getElementById('addTaskBtn').click()">
+
+        + Create First Task
+
+    </button>
+
+</div>
 
         `;
 
@@ -88,48 +113,79 @@ function renderTasks(tasks) {
 
         <div class="task-card ${task.completed ? "completed" : ""}">
 
-            <h3>${task.title}</h3>
+    <div class="task-card-header">
 
-            <p>${task.description || "No description provided."}</p>
+        <h3>${task.title}</h3>
 
-            <span class="priority ${task.priority.toLowerCase()}">
+        <span class="priority ${task.priority.toLowerCase()}">
 
-                ${task.priority}
+            ${task.priority === "High" ? "🔥" : task.priority === "Medium" ? "🟠" : "🟢"}
 
-            </span>
+            ${task.priority}
 
-            <p>
+        </span>
 
-                📅 ${new Date(task.dueDate).toLocaleDateString()}
+    </div>
 
-            </p>
+    <p class="task-description">
 
-            <div class="task-actions">
+        ${task.description || "No description provided."}
 
-    <button
-        class="edit-btn"
-        onclick="editTask('${task._id}')">
+    </p>
 
-        ✏ Edit
+    <div class="task-info">
 
-    </button>
+        <span>
 
-    ${
-      task.completed
-        ? `<button disabled>✅ Completed</button>`
-        : `<button onclick="completeTask('${task._id}')">✅ Complete</button>`
-    }
+            📅 ${getDueStatus(task.dueDate)}
 
-    <button
-        class="delete-btn"
-        onclick="deleteTask('${task._id}')">
+        </span>
 
-        🗑 Delete
+        <span>
 
-    </button>
+            ⭐ +${task.xpReward || 10} XP
+
+        </span>
+
+    </div>
+
+    <div class="task-actions">
+
+        <button class="edit-btn"
+
+            onclick="editTask('${task._id}')">
+
+            ✏ Edit
+
+        </button>
+
+        ${
+          task.completed
+            ? `<button class="complete-btn completed-btn" disabled>
+
+                ✅ Done
+
+            </button>`
+            : `<button class="complete-btn"
+
+                onclick="completeTask('${task._id}')">
+
+                ✔ Complete
+
+            </button>`
+        }
+
+        <button class="delete-btn"
+
+            onclick="deleteTask('${task._id}')">
+
+            🗑 Delete
+
+        </button>
+
+    </div>
 
 </div>
-        </div>
 
     `,
     )
@@ -144,11 +200,13 @@ async function completeTask(id) {
   try {
     await PlannerAPI.completeTask(id);
 
+    showToast("success", "Task Completed", "+10 XP earned.");
+
     loadTasks();
   } catch (error) {
     console.error(error);
 
-    alert(error.message);
+    showToast("error", "Error", error.message);
   }
 }
 
@@ -156,20 +214,14 @@ async function completeTask(id) {
         DELETE TASK
 =========================================*/
 
-async function deleteTask(id) {
-  const confirmDelete = confirm("Are you sure you want to delete this task?");
+function deleteTask(id) {
+  deleteTaskId = id;
 
-  if (!confirmDelete) return;
+  document
 
-  try {
-    await PlannerAPI.deleteTask(id);
+    .getElementById("deleteModal")
 
-    loadTasks();
-  } catch (error) {
-    console.error(error);
-
-    alert(error.message);
-  }
+    .classList.add("active");
 }
 
 /*=========================================
@@ -227,8 +279,16 @@ function initializeTaskForm() {
 
       if (taskId) {
         await PlannerAPI.updateTask(taskId, taskData);
+
+        showToast("success", "Task Updated", "Task updated successfully.");
       } else {
         await PlannerAPI.createTask(taskData);
+
+        showToast(
+          "success",
+          "Task Created",
+          "Study task created successfully.",
+        );
       }
 
       document.getElementById("taskModal").classList.remove("active");
@@ -239,11 +299,13 @@ function initializeTaskForm() {
 
       document.getElementById("modalTitle").textContent = "Create Study Task";
 
+      document.getElementById("submitTaskBtn").textContent = "Create Task";
+
       loadTasks();
     } catch (error) {
       console.error(error);
 
-      alert(error.message);
+      showToast("error", "Error", error.message);
     }
   });
 }
@@ -257,6 +319,8 @@ async function editTask(id) {
 
   document.getElementById("modalTitle").textContent = "Edit Task";
 
+  document.getElementById("submitTaskBtn").textContent = "Update Task";
+
   document.getElementById("taskId").value = task._id;
 
   document.getElementById("taskTitle").value = task.title;
@@ -269,3 +333,151 @@ async function editTask(id) {
 
   document.getElementById("taskModal").classList.add("active");
 }
+
+/*=========================================
+        SEARCH FILTER SORT
+=========================================*/
+
+function applyFilters() {
+  let tasks = [...allTasks];
+
+  const search = document.getElementById("searchTask").value.toLowerCase();
+
+  const filter = document.getElementById("filterTask").value;
+
+  const sort = document.getElementById("sortTask").value;
+
+  if (search) {
+    tasks = tasks.filter((task) => task.title.toLowerCase().includes(search));
+  }
+
+  if (filter === "completed") {
+    tasks = tasks.filter((task) => task.completed);
+  }
+
+  if (filter === "pending") {
+    tasks = tasks.filter((task) => !task.completed);
+  }
+
+  if (sort === "priority") {
+    const order = {
+      High: 1,
+
+      Medium: 2,
+
+      Low: 3,
+    };
+
+    tasks.sort((a, b) => order[a.priority] - order[b.priority]);
+  } else if (sort === "newest") {
+    tasks.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  } else {
+    tasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+  }
+
+  renderTasks(tasks);
+}
+
+document.addEventListener("input", (e) => {
+  if (e.target.id === "searchTask") {
+    applyFilters();
+  }
+});
+
+document.addEventListener("change", (e) => {
+  if (e.target.id === "filterTask" || e.target.id === "sortTask") {
+    applyFilters();
+  }
+});
+
+function updatePlannerStats(tasks) {
+  const total = tasks.length;
+
+  const completed = tasks.filter((task) => task.completed).length;
+
+  const pending = total - completed;
+
+  const progress = total === 0 ? 0 : Math.round((completed / total) * 100);
+
+  setText("totalTasksStat", total);
+
+  setText("pendingTasksStat", pending);
+
+  setText("completedTasksStat", completed);
+
+  setText("progressTasksStat", `${progress}%`);
+}
+
+function setText(id, value) {
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.textContent = value;
+  }
+}
+
+function getDueStatus(date) {
+  const today = new Date();
+
+  const due = new Date(date);
+
+  today.setHours(0, 0, 0, 0);
+
+  due.setHours(0, 0, 0, 0);
+
+  const diff = (due - today) / (1000 * 60 * 60 * 24);
+
+  if (diff < 0) return "🔴 Overdue";
+
+  if (diff === 0) return "🟢 Due Today";
+
+  if (diff === 1) return "🟠 Tomorrow";
+
+  return `🔵 ${diff} Days Left`;
+}
+
+/*=========================================
+        DELETE MODAL
+=========================================*/
+
+document
+
+.getElementById("cancelDelete")
+
+.addEventListener("click",()=>{
+
+    document
+
+    .getElementById("deleteModal")
+
+    .classList
+
+    .remove("active");
+
+});
+
+document
+
+document.getElementById("confirmDelete").addEventListener("click", async () => {
+  try {
+    await PlannerAPI.deleteTask(deleteTaskId);
+
+    document.getElementById("deleteModal").classList.remove("active");
+
+    showToast("warning", "Task Deleted", "Task removed successfully.");
+
+    loadTasks();
+  } catch (error) {
+    showToast("error", "Error", error.message);
+  }
+});
+
+document
+
+  .getElementById("deleteModal")
+
+  .addEventListener("click", (e) => {
+    if (e.target.id === "deleteModal") {
+      e.target.classList.remove("active");
+    }
+  });

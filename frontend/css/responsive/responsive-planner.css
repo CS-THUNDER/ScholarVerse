@@ -1,0 +1,135 @@
+/*=========================================
+        TABLET
+=========================================*/
+
+@media(max-width:992px){
+
+    .planner-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .planner-toolbar{
+
+        flex-direction:column;
+
+    }
+
+    .planner-toolbar input,
+
+    .planner-toolbar select{
+
+        width:100%;
+
+    }
+
+    .task-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*=========================================
+        MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+    .dashboard-main{
+
+        padding:20px;
+
+    }
+
+    .planner-header h1{
+
+        font-size:30px;
+
+    }
+
+    .planner-stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .task-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .task-info{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+    .task-actions{
+
+        flex-direction:column;
+
+    }
+
+    .task-actions button{
+
+        width:100%;
+
+    }
+
+    .task-modal{
+
+        width:95%;
+
+        padding:25px;
+
+    }
+
+}
+
+/*=========================================
+        SMALL MOBILE
+=========================================*/
+
+@media(max-width:480px){
+
+    .planner-header{
+
+        margin-bottom:25px;
+
+    }
+
+    .planner-header h1{
+
+        font-size:26px;
+
+    }
+
+    .planner-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .planner-stat-card{
+
+        text-align:center;
+
+    }
+
+    .task-card{
+
+        padding:18px;
+
+    }
+
+}
