@@ -143,9 +143,19 @@ Author: Sudip Pattanayak
 
     align-items:center;
 
-    gap:20px;
+    gap:24px;
 
     margin-bottom:35px;
+
+}
+
+.dashboard-navbar-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
 
 }
 
@@ -153,11 +163,23 @@ Author: Sudip Pattanayak
 
     color:white;
 
-    font-size:34px;
+    font-size:30px;
 
     font-family:Poppins;
 
     font-weight:700;
+
+    line-height:1.2;
+
+}
+
+.dashboard-navbar-subtitle{
+
+    color:#8f9cb3;
+
+    font-size:15px;
+
+    font-weight:500;
 
 }
 
@@ -167,25 +189,27 @@ Author: Sudip Pattanayak
 
     align-items:center;
 
-    gap:20px;
+    gap:28px;
 
 }
 
 /*=========================================
-        NOTIFICATION BUTTON
+        NOTIFICATION
 =========================================*/
 
 .notification-btn{
 
-    width:48px;
+    width:46px;
 
-    height:48px;
+    height:46px;
 
     border:none;
 
     border-radius:50%;
 
-    background:#1c2434;
+    background:#1b2232;
+
+    border:1px solid rgba(255,255,255,.08);
 
     color:white;
 
@@ -205,7 +229,7 @@ Author: Sudip Pattanayak
 
     background:#00d26a;
 
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 
 }
 
@@ -219,15 +243,15 @@ Author: Sudip Pattanayak
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 
 }
 
 .avatar{
 
-    width:46px;
+    width:50px;
 
-    height:46px;
+    height:50px;
 
     border-radius:50%;
 
@@ -241,21 +265,43 @@ Author: Sudip Pattanayak
 
     align-items:center;
 
-    font-size:18px;
+    font-size:20px;
 
     font-weight:700;
 
     flex-shrink:0;
 
+    box-shadow:0 8px 18px rgba(0,210,106,.25);
+
 }
 
-.user-info span{
+.user-details{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+
+}
+
+.user-name{
 
     color:white;
 
+    font-size:16px;
+
     font-weight:600;
 
-    font-size:15px;
+    line-height:1.2;
+
+}
+
+.user-role{
+
+    color:#8f9cb3;
+
+    font-size:13px;
 
 }
 
@@ -265,20 +311,44 @@ Author: Sudip Pattanayak
 
 @media(max-width:900px){
 
-.dashboard-navbar{
+    .dashboard-navbar{
 
-    flex-direction:column;
+        flex-direction:column;
 
-    align-items:flex-start;
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .dashboard-navbar-right{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
 
 }
 
-.dashboard-navbar-right{
+@media(max-width:576px){
 
-    width:100%;
+    .dashboard-navbar h2{
 
-    justify-content:space-between;
+        font-size:24px;
 
-}
+    }
+
+    .dashboard-navbar-subtitle{
+
+        font-size:14px;
+
+    }
+
+    .user-role{
+
+        display:none;
+
+    }
 
 }

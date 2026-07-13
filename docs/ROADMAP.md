@@ -2,15 +2,19 @@
 
 ## Version 1.0
 
-Authentication
+✅ Authentication
 
-Planner
+✅ Onboarding
 
-Dashboard
+✅ Planner
 
-Profile
+🟡 Dashboard
 
-Settings
+⬜ Profile
+
+⬜ Exam Scheduler
+
+⬜ Settings
 
 ## Version 1.5
 

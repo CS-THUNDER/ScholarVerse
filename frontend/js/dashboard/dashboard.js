@@ -88,7 +88,7 @@ function updateGreeting(user) {
     wish = "Good Night";
   }
 
-  greeting.textContent = `${wish}, ${user.fullName.split(" ")[0]} 👋`;
+  greeting.textContent = `${wish}, ${(user.fullName || "Student").split(" ")[0]} 👋`;
 }
 
 /*=========================================
@@ -166,13 +166,19 @@ function renderPlannerWidget(tasks) {
 
             <small>
 
-                ${task.priority}
+    ${task.priority === "High" ? "🔥" : task.priority === "Medium" ? "🟠" : "🟢"}
 
-                •
+    ${task.priority}
 
-                ${formatDate(task.dueDate)}
+</small>
 
-            </small>
+<br>
+
+<small>
+
+    📅 ${formatDate(task.dueDate)}
+
+</small>
 
         </div>
 
@@ -236,9 +242,13 @@ function renderRecentActivity(tasks) {
 
                 <small>
 
-                    ${task.completed ? "Completed" : "Task Created"}
+    ${task.completed ? "Completed" : "Created"}
 
-                </small>
+    •
+
+    ${formatDate(task.updatedAt || task.createdAt)}
+
+</small>
 
             </div>
 
@@ -294,21 +304,30 @@ function showDashboardError(message){
 
     if(!dashboard) return;
 
-    dashboard.innerHTML=`
+    dashboard.innerHTML = `
 
         <div class="card">
 
             <h2>
 
-                ⚠ Dashboard Error
+⚠ Unable to Load Dashboard
 
-            </h2>
+</h2>
 
             <p>
 
                 ${message}
 
             </p>
+            <button
+
+class="dashboard-btn"
+
+onclick="location.reload()">
+
+Retry
+
+</button>
 
         </div>
 
