@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | ScholarVerse</title>
+
+    <!-- Base -->
+
+    <link rel="stylesheet" href="../css/base/base-variables.css">
+    <link rel="stylesheet" href="../css/base/base-reset.css">
+    <link rel="stylesheet" href="../css/base/base-typography.css">
+    <link rel="stylesheet" href="../css/base/base-utilities.css">
+
+    <!-- Layout -->
+
+    <link rel="stylesheet" href="../css/layout/dashboard-layout.css">
+    <link rel="stylesheet" href="../css/layout/sidebar.css">
+    <link rel="stylesheet" href="../css/layout/navbar.css">
+
+    <!-- Components -->
+
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="../css/components/toast.css">
+
+    <!-- Page -->
+
+    <link rel="stylesheet" href="../css/pages/profile.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <div id="sidebar"></div>
+
+        <main class="dashboard-main">
+
+            <div id="navbar"></div>
+
+            <!-- Header -->
+
+            <section class="profile-header">
+
+                <span class="page-badge">
+                
+                    Scholar Profile
+                
+                </span>
+
+                <p>
+
+                    Manage your personal information and track your progress.
+
+                </p>
+
+            </section>
+
+            <!-- Grid -->
+
+            <section class="profile-grid">
+
+                <!-- Left -->
+
+                <div class="card profile-card">
+                
+                    <div class="profile-avatar">
+                
+                        <span id="profileAvatar">
+                
+                            S
+                
+                        </span>
+                
+                    </div>
+                
+                    <h2 id="profileName">
+                
+                        Loading...
+                
+                    </h2>
+                
+                    <p id="profileEmail">
+                
+                        Loading...
+                
+                    </p>
+                
+                    <span class="profile-role">
+                
+                        🎓 Student
+                
+                    </span>
+                
+                    <div class="profile-divider"></div>
+
+                    <!-- XP Progress -->
+                    
+                    <div class="xp-section">
+                    
+                        <div class="xp-header">
+                    
+                            <span>Level <strong id="profileLevel">1</strong></span>
+                    
+                            <span id="xpText">
+                    
+                                0 / 100 XP
+                    
+                            </span>
+                    
+                        </div>
+                    
+                        <div class="xp-bar">
+                    
+                            <div id="xpFill" class="xp-fill"></div>
+                    
+                        </div>
+                    
+                        <small id="xpRemaining">
+                    
+                            100 XP until Level 2
+                    
+                        </small>
+                    
+                    </div>
+                
+                    <div class="profile-progress">
+                
+                        <div class="progress-item">
+                
+                            <span>⭐ XP</span>
+                
+                            <strong id="profileXP">
+                
+                                0
+                
+                            </strong>
+                
+                        </div>
+                
+                        <div class="progress-item">
+                
+                            <span>🏆 Level</span>
+                
+                            <strong id="profileLevel">
+                
+                                1
+                
+                            </strong>
+                
+                        </div>
+                
+                        <div class="progress-item">
+                
+                            <span>🔥 Streak</span>
+                
+                            <strong id="profileStreak">
+                
+                                0 Days
+                
+                            </strong>
+                
+                        </div>
+                
+                    </div>
+                
+                    <button class="dashboard-btn profile-avatar-btn" disabled>
+                    
+                        🎨 Change Avatar
+                    
+                    </button>
+                    
+                    <p class="coming-soon-text">
+                    
+                        Coming Soon
+                    
+                    </p>
+                
+                </div>
+                <!-- Right -->
+
+                <div class="card">
+
+                    <h3>Personal Information</h3>
+
+                    <form id="profileForm">
+
+                        <div class="form-group">
+
+                            <label>University</label>
+
+                            <input type="text" id="university">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Course</label>
+
+                            <input type="text" id="course">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Semester</label>
+
+                            <input type="number" id="semester">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Goal</label>
+
+                            <input type="text" id="goal">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Experience</label>
+
+                            <select id="experience">
+
+                                <option>Beginner</option>
+
+                                <option>Intermediate</option>
+
+                                <option>Advanced</option>
+
+                            </select>
+
+                        </div>
+
+                        <button type="submit" class="dashboard-btn">
+                        
+                            Save Changes
+                        
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+            <!-- Statistics -->
+
+            <section class="profile-stats">
+            
+                <div class="card stat-card">
+            
+                    <div class="stat-icon">
+            
+                        📚
+            
+                    </div>
+            
+                    <h2 id="completedTasks">
+            
+                        0
+            
+                    </h2>
+            
+                    <p>
+            
+                        Completed Tasks
+            
+                    </p>
+            
+                </div>
+            
+                <div class="card stat-card">
+            
+                    <div class="stat-icon">
+            
+                        📖
+            
+                    </div>
+            
+                    <h2 id="pendingTasks">
+            
+                        0
+            
+                    </h2>
+            
+                    <p>
+            
+                        Pending Tasks
+            
+                    </p>
+            
+                </div>
+            
+                <div class="card stat-card">
+            
+                    <div class="stat-icon">
+            
+                        📈
+            
+                    </div>
+            
+                    <h2 id="studyProgress">
+            
+                        0%
+            
+                    </h2>
+            
+                    <p>
+            
+                        Study Progress
+            
+                    </p>
+            
+                </div>
+            
+            </section>
+
+            <section class="profile-achievements">
+
+    <h2>🎯 Milestones</h2>
+
+    <div class="achievement-grid">
+
+        <div id="achievement-first-task" class="card achievement-card locked">
+
+            <div class="achievement-icon">🔒</div>
+
+            <h3>First Task</h3>
+
+            <p>Complete your first study task.</p>
+
+        </div>
+
+        <div id="achievement-100xp" class="card achievement-card locked">
+
+            <div class="achievement-icon">⭐</div>
+
+            <h3>100 XP</h3>
+
+            <p>Earn your first 100 XP.</p>
+
+        </div>
+
+        <div id="achievement-streak" class="card achievement-card locked">
+
+            <div class="achievement-icon">🔥</div>
+
+            <h3>7 Day Streak</h3>
+
+            <p>Study for 7 consecutive days.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+        </main>
+
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="../js/api/api.js"></script>
+    <script src="../js/utils/auth.js"></script>
+
+    <script src="../js/components/sidebar.js"></script>
+    <script src="../js/components/navbar.js"></script>
+    <script src="../js/components/toast.js"></script>
+
+    <script src="../js/profile/profile.js"></script>
+
+</body>
+
+</html>

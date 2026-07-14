@@ -274,6 +274,40 @@ function initializeTaskForm() {
       priority: document.getElementById("taskPriority").value,
     };
 
+    /*=========================================
+        VALIDATION
+=========================================*/
+
+    if (taskData.title.length < 3) {
+      showToast("Task title must be at least 3 characters.", "error");
+
+      return;
+    }
+
+    if (taskData.title.length > 100) {
+      showToast("Task title cannot exceed 100 characters.", "error");
+
+      return;
+    }
+
+    if (taskData.description.length > 300) {
+      showToast("Description cannot exceed 300 characters.", "error");
+
+      return;
+    }
+
+    const today = new Date();
+
+    today.setHours(0, 0, 0, 0);
+
+    const selectedDate = new Date(taskData.dueDate);
+
+    if (selectedDate < today) {
+      showToast("Please choose today or a future date.", "error");
+
+      return;
+    }
+
     try {
       const taskId = document.getElementById("taskId").value;
 
@@ -307,7 +341,7 @@ function initializeTaskForm() {
 
       showToast("error", "Error", error.message);
     }
-  });
+  },);
 }
 
 async function editTask(id) {

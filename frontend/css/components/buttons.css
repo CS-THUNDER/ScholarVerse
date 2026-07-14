@@ -1,0 +1,59 @@
+/*=========================================
+        DASHBOARD BUTTON
+=========================================*/
+
+.dashboard-btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    background:#00d26a;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px 24px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    text-decoration:none;
+
+}
+
+.dashboard-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#00bb60;
+
+    box-shadow:0 10px 25px rgba(0,210,106,.25);
+
+}
+
+.dashboard-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.dashboard-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}

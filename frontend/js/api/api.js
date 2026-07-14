@@ -154,3 +154,5 @@ const DashboardAPI = {
     }
 
 };
+
+DashboardAPI.getDashboard();

@@ -24,6 +24,58 @@ const createTask = async (req, res) => {
       priority,
     } = req.body;
 
+    /*=========================================
+        VALIDATION
+=========================================*/
+
+    if (!title || title.trim().length < 3) {
+      return res.status(400).json({
+        success: false,
+
+        message: "Task title must be at least 3 characters.",
+      });
+    }
+
+    if (title.length > 100) {
+      return res.status(400).json({
+        success: false,
+
+        message: "Task title cannot exceed 100 characters.",
+      });
+    }
+
+    if (description && description.length > 300) {
+      return res.status(400).json({
+        success: false,
+
+        message: "Description cannot exceed 300 characters.",
+      });
+    }
+
+    const today = new Date();
+
+    today.setHours(0, 0, 0, 0);
+
+    const selectedDate = new Date(dueDate);
+
+    if (selectedDate < today) {
+      return res.status(400).json({
+        success: false,
+
+        message: "Due date cannot be in the past.",
+      });
+    }
+
+    const allowedPriorities = ["Low", "Medium", "High"];
+
+    if (!allowedPriorities.includes(priority)) {
+      return res.status(400).json({
+        success: false,
+
+        message: "Invalid priority.",
+      });
+    }
+
     const task = await Planner.create({
       user: req.user.id,
 

@@ -216,33 +216,6 @@
 
 }
 
-.dashboard-btn{
-
-    border:none;
-
-    padding:12px 24px;
-
-    border-radius:12px;
-
-    background:#00d26a;
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-weight:600;
-
-}
-
-.dashboard-btn:hover{
-
-    transform:translateY(-3px);
-
-    background:#00b85c;
-
-}
 
 @media(max-width:1000px){
 
