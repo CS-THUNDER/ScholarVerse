@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leaderboard | ScholarVerse</title>  
+    
+    <!-- Base -->
+    
+    <link rel="stylesheet" href="../css/base/base-variables.css">
+    <link rel="stylesheet" href="../css/base/base-reset.css">
+    <link rel="stylesheet" href="../css/base/base-typography.css">
+    <link rel="stylesheet" href="../css/base/base-utilities.css">
+    <link rel="stylesheet" href="../css/base/base-animations.css">
+    
+    <!-- Layout -->
+    
+    <link rel="stylesheet" href="../css/layout/dashboard-layout.css">
+    <link rel="stylesheet" href="../css/layout/sidebar.css">
+    <link rel="stylesheet" href="../css/layout/navbar.css">
+    
+    <!-- Components -->
+    
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/toast.css">
+    
+    <!-- Page -->
+    
+    <link rel="stylesheet" href="../css/pages/leaderboard.css">
+    
+    <!-- Background -->
+    
+    <link rel="stylesheet" href="../css/background.css">
+
+    </head>
+
+    <body>
+    
+        <div class="dashboard-layout">
+    
+            <!-- Sidebar -->
+            <div id="sidebar"></div>
+    
+            <!-- Main Content -->
+            <main class="dashboard-main">
+    
+                <!-- Navbar -->
+                <div id="navbar"></div>
+    
+                <!-- Leaderboard Header -->
+                <section class="leaderboard-header">
+    
+                    <h1>🏆 Leaderboard</h1>
+    
+                    <p>
+    
+                        Compete. Learn. Rise. <br>
+See how you rank against the ScholarVerse community.
+
+    
+                    </p>
+    
+                </section>
+
+                <section class="season-banner">
+                
+                    <div class="season-left">
+                
+                        <h2>
+                
+                            🏆 Weekly Season
+                
+                        </h2>
+                
+                        <p>
+                
+                            Compete with students and climb to the top.
+                
+                        </p>
+                
+                    </div>
+                
+                    <div class="season-right">
+                
+                        <div class="season-box">
+                
+                            <small>
+                
+                                Ends In
+                
+                            </small>
+                
+                            <strong id="seasonCountdown">
+                
+                                5D 12H
+                
+                            </strong>
+                
+                        </div>
+                
+                        <div class="season-box">
+                
+                            <small>
+                
+                                Participants
+                
+                            </small>
+                
+                            <strong id="participantCount">
+                
+                                237
+                
+                            </strong>
+                
+                        </div>
+                
+                    </div>
+                
+                </section>
+    
+                <!-- Leaderboard Filters -->
+                <section class="leaderboard-tabs">
+    
+                    <button class="leaderboard-tab active">
+    
+                        Weekly
+    
+                    </button>
+    
+                    <button class="leaderboard-tab">
+    
+                        Monthly
+    
+                    </button>
+    
+                    <button class="leaderboard-tab">
+    
+                        Yearly
+    
+                    </button>
+    
+                    <button class="leaderboard-tab">
+    
+                        👑 Hall of Fame
+    
+                    </button>
+    
+                </section>
+    
+                <!-- Podium -->
+    
+                <section id="podiumContainer" class="leaderboard-podium">
+                
+                    <!-- Second -->
+                
+                    <div class="podium-item second">
+                
+                        <div class="podium-card">
+                
+                            <div class="podium-medal">🥈</div>
+                
+                            <div id="secondAvatar" class="podium-avatar">R</div>
+                            
+                            <h3 id="secondName">Rahul</h3>
+                            
+                            <p id="secondCourse">MCA</p>
+                            
+                            <span id="secondXP">Lv 7 • 760 XP</span>
+                
+                        </div>
+                
+                        <div class="podium-base silver">
+                
+                            <h2>2</h2>
+                
+                        </div>
+                
+                    </div>
+                
+                    <!-- First -->
+                
+                    <div class="podium-item first">
+                
+                        <div class="podium-card champion">
+                
+                            <div class="podium-crown">
+                
+                                👑
+                
+                            </div>
+                
+                            <div class="podium-medal">🥇</div>
+                
+                            <div id="firstAvatar" class="podium-avatar">S</div>
+                            
+                            <h3 id="firstName">Sudip</h3>
+                            
+                            <p id="firstCourse">MCA</p>
+                            
+                            <span id="firstXP">Lv 8 • 840 XP</span>
+                
+                        </div>
+                
+                        <div class="podium-base gold">
+                
+                            <h2>1</h2>
+                
+                        </div>
+                
+                    </div>
+                
+                    <!-- Third -->
+                
+                    <div class="podium-item third">
+                
+                        <div class="podium-card">
+                
+                            <div class="podium-medal">🥉</div>
+                
+                            <div id="thirdAvatar" class="podium-avatar">P</div>
+                            
+                            <h3 id="thirdName">Priya</h3>
+                            
+                            <p id="thirdCourse">BCA</p>
+                            
+                            <span id="thirdXP">Lv 6 • 700 XP</span>
+                
+                        </div>
+                
+                        <div class="podium-base bronze">
+                
+                            <h2>3</h2>
+                
+                        </div>
+                
+                    </div>
+                
+                </section>
+    
+                <!-- Rankings -->
+    
+                <section class="leaderboard-content">
+                
+                    <div class="leaderboard-section">
+                
+                        <div class="leaderboard-title">
+                
+                            <h2>
+                
+                                🏅 Top 100 Students
+                
+                            </h2>
+                
+                            <span class="live-status">
+                
+                                <span class="live-dot"></span>
+                
+                                Live Rankings
+                
+                            </span>
+                
+                        </div>
+                
+                        <div id="leaderboardContainer" class="leaderboard-table">
+
+                            <div class="leaderboard-header">
+
+    <span>Rank</span>
+
+    <span>Student</span>
+
+    <span>Level</span>
+
+    <span>XP</span>
+
+</div>
+
+<div id="leaderboardRows">
+
+</div>
+                
+                        </div>
+                
+                    </div>
+                
+                    <aside class="journey-card">
+                
+                        <h2>
+                
+                            📍 Your Journey
+                
+                        </h2>
+                
+                        <div class="journey-rank">
+                
+                            <span id="userRank">
+                
+                                #235
+                
+                            </span>
+                
+                        </div>
+                
+                        <div class="journey-xp">
+                
+                            <small>
+                
+                                Total XP
+                
+                            </small>
+                
+                            <strong id="journeyXP">
+                
+                                ⭐ 420 XP
+                
+                            </strong>
+                
+                        </div>
+                
+                        <p id="journeyText">
+                
+                            Need only 60 XP <br>
+                            
+                            to enter the <br>
+                            
+                            TOP 100 🚀
+                
+                        </p>
+                
+                        <div class="journey-progress">
+                
+                            <div id="journeyProgress" class="journey-progress-fill">
+                
+                            </div>
+                
+                        </div>
+                
+                        <small id="journeyPercent">
+                
+                            70%
+                
+                        </small>
+                
+                    </aside>
+                
+                </section>
+    
+            </main>
+    
+        </div>
+    
+        <!-- Toast -->
+    
+        <div id="toastContainer" class="toast-container">
+    
+        </div>
+    
+        <script src="../js/api/api.js"></script>
+        <script src="../js/utils/auth.js"></script>
+    
+        <script src="../js/components/sidebar.js"></script>
+        <script src="../js/components/navbar.js"></script>
+        <script src="../js/components/toast.js"></script>
+    
+        <script src="../js/leaderboard/leaderboard.js"></script>
+    
+    </body>
+
+</html>

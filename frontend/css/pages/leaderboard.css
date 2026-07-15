@@ -1,0 +1,882 @@
+/*
+==========================================
+ScholarVerse
+Leaderboard
+Author: Sudip Pattanayak
+==========================================
+*/
+
+/*=========================================
+        HEADER
+=========================================*/
+
+.leaderboard-header{
+
+    margin-bottom:35px;
+
+}
+
+.leaderboard-header h1{
+
+    color:white;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+}
+
+.leaderboard-header p{
+
+    color:#9ca3af;
+
+    font-size:17px;
+
+}
+
+/*=========================================
+        SEASON BANNER
+=========================================*/
+
+.season-banner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    padding:25px 30px;
+
+    background:linear-gradient(
+        135deg,
+        #1b2232,
+        #111827
+    );
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.season-left h2{
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.season-left p{
+
+    color:#9ca3af;
+
+}
+
+.season-right{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.season-box{
+
+    background:#0f172a;
+
+    padding:16px 22px;
+
+    border-radius:16px;
+
+    text-align:center;
+
+}
+
+.season-box small{
+
+    display:block;
+
+    color:#9ca3af;
+
+    margin-bottom:6px;
+
+}
+
+.season-box strong{
+
+    color:#00d26a;
+
+    font-size:20px;
+
+}
+
+/*=========================================
+        FILTER TABS
+=========================================*/
+
+.leaderboard-tabs{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:50px;
+
+}
+
+.leaderboard-tab{
+
+    border:none;
+
+    background:#1b2232;
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.leaderboard-tab:hover{
+
+    transform:translateY(-3px);
+
+    background:#00d26a;
+
+}
+
+.leaderboard-tab.active{
+
+    background:#00d26a;
+
+}
+
+/*=========================================
+        PODIUM
+=========================================*/
+
+.leaderboard-podium{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:40px;
+
+    margin:70px 0;
+
+}
+
+.podium-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    transition:.3s;
+
+}
+
+.podium-item:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.podium-card{
+
+    width:220px;
+
+    background:#1b2232;
+
+    border-radius:24px 24px 0 0;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.champion{
+
+    border:2px solid #facc15;
+
+    box-shadow:0 0 35px rgba(250,204,21,.25);
+
+}
+
+.podium-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.podium-crown{
+
+    position:absolute;
+
+    top:-28px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:36px;
+
+}
+
+.podium-medal{
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+}
+
+.podium-rank{
+
+    font-size:36px;
+
+    margin-bottom:15px;
+
+}
+
+.podium-avatar{
+
+    width:86px;
+
+    height:86px;
+
+    border-radius:50%;
+
+    background:#00d26a;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 18px;
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.podium-card h3{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+}
+
+.podium-card p{
+
+    color:#9ca3af;
+
+    margin-bottom:12px;
+
+}
+
+.podium-card span{
+
+    color:#00d26a;
+
+    font-weight:700;
+
+}
+
+.podium-base{
+
+    width:220px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:0 0 22px 22px;
+
+    color:white;
+
+    font-size:56px;
+
+    font-weight:800;
+
+}
+
+.gold{
+
+    height:170px;
+
+    background:linear-gradient(
+        180deg,
+        #facc15,
+        #ca8a04
+    );
+
+}
+
+.silver{
+
+    height:120px;
+
+    background:linear-gradient(
+        180deg,
+        #d1d5db,
+        #9ca3af
+    );
+
+}
+
+.bronze{
+
+    height:95px;
+
+    background:linear-gradient(
+        180deg,
+        #cd7f32,
+        #8b5a2b
+    );
+
+}
+
+.leaderboard-page{
+
+    background:
+    radial-gradient(
+        circle at top,
+        rgba(0,210,106,.08),
+        transparent 40%
+    );
+
+}
+
+
+
+/*=========================================
+        YOUR JOURNEY
+=========================================*/
+
+.journey-card{
+
+    position:sticky;
+
+    top:25px;
+
+    background:#1b2232;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    box-shadow:
+0 0 35px rgba(0,210,106,.08);
+
+}
+
+.journey-card h2{
+
+    color:#fff;
+
+    margin-bottom:22px;
+
+}
+
+.journey-rank span{
+
+    font-size:72px;
+
+    font-weight:800;
+
+    color:#00d26a;
+
+}
+
+.journey-xp{
+
+    margin:20px 0;
+
+}
+
+.journey-xp small{
+
+    display:block;
+
+    color:#9ca3af;
+
+}
+
+.journey-xp strong{
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+.journey-card p{
+
+    color:#9ca3af;
+
+    margin:25px 0 18px;
+
+}
+
+.journey-progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#111827;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.journey-progress-fill{
+
+    width:70%;
+
+    height:100%;
+
+    background:#00d26a;
+
+    border-radius:999px;
+
+}
+
+#journeyPercent{
+
+    display:block;
+
+    margin-top:14px;
+
+    color:#00d26a;
+
+    font-weight:700;
+
+}
+
+@media(max-width:900px){
+
+    .leaderboard-podium{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .podium-card{
+
+        width:100%;
+
+        max-width:320px;
+
+        height:auto !important;
+
+    }
+
+    .leaderboard-tabs{
+
+        justify-content:center;
+
+    }
+
+}
+
+/* Leaderboard */
+
+.leaderboard-section{
+
+    background:#1b2232;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    margin-bottom:45px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.leaderboard-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.leaderboard-title h2{
+
+    color:white;
+
+    font-size:28px;
+
+}
+
+.leaderboard-title span{
+
+    color:#00d26a;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.leaderboard-table{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    margin-top:20px;
+
+}
+
+.leaderboard-row{
+
+    display:grid;
+
+    grid-template-columns:
+
+    70px
+
+    70px
+
+    1fr
+
+    120px
+
+    100px
+
+    120px;
+
+    align-items:center;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    background:#111827;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.leaderboard-row:hover{
+
+    background:#182132;
+
+    transform:translateX(6px);
+
+}
+
+.rank{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#facc15;
+
+}
+
+.rank-avatar{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    background:#00d26a;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.student-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.student-info h4{
+
+    color:white;
+
+    margin-bottom:4px;
+
+}
+
+.student-info small{
+
+    color:#9ca3af;
+
+}
+
+.student-info h3{
+
+    color:white;
+
+    margin-bottom:4px;
+
+}
+
+.student-info p{
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+}
+
+.level-badge{
+
+    background:#00d26a;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+.xp{
+
+    color:#facc15;
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+/*=========================================
+        CONTENT LAYOUT
+=========================================*/
+
+.leaderboard-content{
+
+    display:grid;
+
+    grid-template-columns:2.2fr 1fr;
+
+    gap:28px;
+
+    margin-top:40px;
+
+    align-items:start;
+
+}
+
+.leaderboard-table{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    max-height:560px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding-right:8px;
+
+}
+
+.leaderboard-table::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.leaderboard-table::-webkit-scrollbar-track{
+
+    background:#111827;
+
+    border-radius:999px;
+
+}
+
+.leaderboard-table::-webkit-scrollbar-thumb{
+
+    background:#00d26a;
+
+    border-radius:999px;
+
+}
+
+.leaderboard-table::-webkit-scrollbar-thumb:hover{
+
+    background:#00b85d;
+
+}
+
+.live-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#00d26a;
+
+    font-weight:700;
+
+}
+
+.live-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#00d26a;
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.4;
+
+        transform:scale(.8);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.leaderboard-section{
+
+    height:560px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.leaderboard-header{
+
+    display:grid;
+
+    grid-template-columns:70px 1fr 100px 100px;
+
+    padding:16px 20px;
+
+    color:#9ca3af;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    position:sticky;
+
+    top:0;
+
+    background:#1b2232;
+
+    z-index:10;
+
+}
+
+.leaderboard-row.me{
+
+    border:2px solid #00d26a;
+
+    background:#182132;
+
+}

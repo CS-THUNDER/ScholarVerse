@@ -1,35 +1,112 @@
-# ScholarVerse Roadmap
+# ScholarVerse Product Roadmap
 
-## Version 1.0
+> Vision:
+> ScholarVerse is not just a study planner.
+> It is a gamified student growth platform where students can learn, compete, showcase achievements, and build their academic journey.
 
-✅ Authentication
+---
 
-✅ Onboarding
+# Phase 1 - Foundation ✅
 
-✅ Planner
+- [x] Authentication
+- [x] Onboarding
+- [x] Dashboard
+- [x] Planner
+- [x] Profile
 
-🟡 Dashboard
+---
 
-⬜ Profile
+# Phase 2 - Competition (Current)
 
-⬜ Exam Scheduler
+## Leaderboard
 
-⬜ Settings
+- [ ] Weekly Leaderboard
+- [ ] Monthly Leaderboard
+- [ ] Yearly Leaderboard
+- [ ] Hall of Fame
+- [ ] Top 3 Podium
+- [ ] Top 100 Rankings
+- [ ] Your Journey Card
+- [ ] Public Profile Navigation
 
-## Version 1.5
+---
 
-Leaderboard
+# Phase 3 - Productivity
 
-Community
+- [ ] Exam Scheduler
+- [ ] Calendar
+- [ ] Study Reminders
 
-## Version 2.0
+---
 
-AI Assistant
+# Phase 4 - Community
 
-Resume Builder
+- [ ] Community Feed
+- [ ] Study Groups
+- [ ] Notes Sharing
+- [ ] Resources
+- [ ] Success Stories
 
-Interview Practice
+---
 
-Attendance
+# Phase 5 - Career Hub
 
-Timetable
+- [ ] Resume Builder
+- [ ] Project Showcase
+- [ ] Internship Board
+- [ ] Placement Updates
+- [ ] Career Roadmaps
+
+---
+
+# Phase 6 - Gamification
+
+- [ ] Coins
+- [ ] Reward Store
+- [ ] Avatar Shop
+- [ ] Avatar Frames
+- [ ] Themes
+- [ ] Titles
+- [ ] Badge Collection
+
+---
+
+# Future Features
+
+## Public Profile
+
+- GitHub
+- LinkedIn
+- Portfolio
+- About Me
+- Academic & Career Milestones
+
+## Academic & Career Milestones
+
+- JECA Rank
+- GATE Rank
+- Placements
+- Internships
+- Certifications
+- Hackathons
+- Research Publications
+
+## Prestige Recognition
+
+- Hall of Fame
+- Scholar Elite
+- ScholarVerse Legend
+
+> Prestige titles are reserved for exceptional real-world achievements and verified contributions.
+
+---
+
+# Development Rule
+
+- Build one module completely.
+- Test it.
+- Polish it.
+- Commit it.
+- Then move to the next module.
+
+No unfinished modules.

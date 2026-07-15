@@ -23,6 +23,7 @@ const authRoutes = require("./routes/authRoutes");
 const profileRoutes = require("./routes/profileRoutes");
 const plannerRoutes = require("./routes/plannerRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
+const leaderboardRoutes = require("./routes/leaderboardRoutes");
 
 // Middleware
 const authMiddleware = require("./middleware/authMiddleware");
@@ -52,6 +53,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/planner", plannerRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/leaderboard", leaderboardRoutes);
+
 // Test Protected Route
 
 app.get("/api/profile", authMiddleware, (req, res) => {
