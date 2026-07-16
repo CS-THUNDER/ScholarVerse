@@ -7,32 +7,42 @@ Author: Sudip Pattanayak
 */
 
 /*=========================================
-        HEADER
+        LEADERBOARD HEADER
 =========================================*/
 
-.leaderboard-header{
+.leaderboards-header{
 
-    margin-bottom:35px;
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:48px;
 
 }
 
-.leaderboard-header h1{
+.leaderboards-header h1{
 
     color:white;
 
-    font-size:42px;
+    font-size:38px;
 
-    margin-bottom:10px;
+    margin-bottom:8px;
 
     font-weight:700;
 
 }
 
-.leaderboard-header p{
+.leaderboards-header p{
 
-    color:#9ca3af;
+    color:#a9b3c7;
 
-    font-size:17px;
+    font-size:16px;
+
+    opacity:.85;
+
+    line-height:1.5;
 
 }
 
@@ -114,6 +124,8 @@ Author: Sudip Pattanayak
 
     font-size:20px;
 
+    font-weight:700;
+
 }
 
 /*=========================================
@@ -124,11 +136,11 @@ Author: Sudip Pattanayak
 
     display:flex;
 
-    gap:15px;
+    gap:20px;
 
     flex-wrap:wrap;
 
-    margin-bottom:50px;
+    margin-bottom:20px;
 
 }
 

@@ -8,48 +8,79 @@ Author: Sudip Pattanayak
 
 const User = require("../models/user");
 
-/*=========================================
-        GET LEADERBOARD
-=========================================*/
+exports.getLeaderboard = async (req, res) => {
+  try {
 
-const getLeaderboard = async (req, res) => {
+    const users = await User.find()
+      .sort({
+        xp: -1,
+        level: -1,
+        streak: -1,
+      })
+      .select("fullName course xp level streak avatar")
+      .lean();
 
-    try {
+    const currentUserId = req.user.id;
 
-        const users = await User.find({})
-            .select("fullName xp level streak")
-            .sort({ xp: -1 });
+    const currentRank =
+      users.findIndex((user) => user._id.toString() === currentUserId) + 1;
 
-        res.status(200).json({
+    if (currentRank === 0) {
+      return res.status(404).json({
+        success: false,
 
-            success: true,
-
-            count: users.length,
-
-            users
-
-        });
-
+        message: "User not found in leaderboard.",
+      });
     }
 
-    catch(error){
+    const participants = users.length;
 
-        console.error(error);
+    const top100 = users.slice(0, 100);
 
-        res.status(500).json({
+    const xpNeeded =
+      currentRank <= 100
+        ? 0
+        : Math.max(
+            0,
+            (top100[top100.length - 1]?.xp || 0) - users[currentRank - 1].xp,
+          );
 
-            success:false,
+    const progress =
+      currentRank <= 100
+        ? 100
+        : Math.max(
+            0,
+            Math.min(
+              100,
+              (users[currentRank - 1].xp /
+                (top100[top100.length - 1]?.xp || 1)) *
+                100,
+            ),
+          );
+    const currentUser = users[currentRank - 1];
 
-            message:"Server Error"
+    res.json({
+      success: true,
 
-        });
+      season: "Weekly",
 
-    }
+      participants,
 
-};
+      currentUserRank: currentRank,
 
-module.exports = {
+      xpNeeded,
 
-    getLeaderboard
+      progress,
 
+      currentUser,
+
+      users: top100,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+
+      message: error.message,
+    });
+  }
 };

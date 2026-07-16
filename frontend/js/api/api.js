@@ -156,3 +156,13 @@ const DashboardAPI = {
 };
 
 DashboardAPI.getDashboard();
+
+/*=========================================
+        LEADERBOARD API
+=========================================*/
+
+const LeaderboardAPI = {
+  async getLeaderboard(season = "weekly") {
+    return apiRequest(`/leaderboard?season=${season}`);
+  },
+};
