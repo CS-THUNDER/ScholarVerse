@@ -2,91 +2,230 @@
 
 > **Study Smarter. Compete Better. Grow Together.**
 
-A modern gamified learning platform designed to transform the way students learn, collaborate, and achieve their academic goals.
+ScholarVerse is a modern gamified learning platform built to help students stay organized, motivated, and career-ready.
 
-ScholarVerse combines **AI-powered study planning**, **gamification**, **community learning**, and **career opportunities** into a single platform built for students.
+Instead of being just another study planner, ScholarVerse combines **task management**, **gamification**, **analytics**, **community learning**, and **career resources** into one unified platform.
 
 ---
 
-## 🚀 Project Status
+# 🚀 Current Status
 
-> **Currently Under Active Development**
+> 🚧 Actively Under Development
 
-### Completed ✅
+### ✅ Completed
 
-- Modern Landing Page
-- Responsive UI
-- Modular CSS Architecture
-- Design System
-- Lucide Icons
-- Project Documentation
-
-### In Progress 🚧
-
-- Authentication System
-- Backend Development
-- MongoDB Integration
-
-### Upcoming 📌
-
+- Modern Responsive Landing Page
+- Authentication System (Login / Register)
+- JWT Authentication
+- Protected Dashboard
 - Smart Study Planner
-- XP & Badge System
-- Community
+- XP & Level System
+- Live Leaderboard
+- Weekly Season Leaderboard
+- User Journey Card
+- MongoDB Database Integration
+- REST API
+- Modular CSS Architecture
+- Responsive Foundation
+
+---
+
+### 🚧 Currently Working On
+
+- Achievement & Badge System
+- Profile Page
+- Notification Center
+
+---
+
+### 📌 Planned Features
+
+- Community Feed
+- Study Groups
 - Career Hub
 - AI Study Coach
-- Leaderboard
+- Admin Dashboard
+- Leaderboard Seasons
+- Daily Challenges
+- Mobile Optimization
 
-## 📸 Preview
+---
 
-### Desktop
+# 📸 Preview
 
-![Desktop](docs/screenshots/desktop.png)
+## Landing Page
 
-### Tablet
+![Landing](docs/screenshots/desktop.png)
 
-![Tablet](docs/screenshots/tablet.png)
+## Dashboard
 
-### Mobile
+![Dashboard](docs/screenshots/dashboard.png)
 
-![Mobile](docs/screenshots/mobile.png)
+## Planner
 
-## ✨ Features
+![Planner](docs/screenshots/planner.png)
 
-### 🎯 Smart Learning
+## Leaderboard
 
-- AI-powered study planner
-- Adaptive study schedule
-- Daily missions
-- Revision reminders
+![Leaderboard](docs/screenshots/leaderboard1.png)
+![Leaderboard](docs/screenshots/leaderboard2.png)
 
-### 🎮 Gamification
+---
+
+# ✨ Features
+
+## 📅 Smart Study Planner
+
+- Create study tasks
+- Daily planner
+- Task completion tracking
+- Automatic XP rewards
+- Progress overview
+
+---
+
+## 🏆 Gamification
 
 - XP System
 - Level Progression
-- Badges
-- Daily Streaks
-- Achievements
+- Weekly Rankings
+- Live Leaderboard
+- User Journey
+- Future Achievement System
 
-### 👥 Community
+---
 
-- Discussion Feed
-- Study Groups
-- Peer Support
-- Mentor Guidance
+## 📊 Dashboard
 
-### 💼 Career Hub
+- Learning Statistics
+- XP Progress
+- Current Level
+- Planner Overview
+- Productivity Widgets
 
-- Job Updates
-- Internship Opportunities
+---
+
+## 👤 Authentication
+
+- Secure Registration
+- JWT Login
+- Password Encryption
+- Protected Routes
+
+---
+
+## 💼 Career Hub (Upcoming)
+
+- Jobs
+- Internships
 - Scholarships
 - Hackathons
-- Placement Experiences
-- Certification Resources
+- Certifications
 
-### 📊 Analytics
+---
 
-- Progress Dashboard
-- Learning Insights
-- Weekly Reports
-- Study Statistics
+## 👥 Community (Upcoming)
 
+- Discussion Feed
+- Notes Sharing
+- Study Groups
+- Peer Support
+- Mentor Connect
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+### Backend
+
+- Node.js
+- Express.js
+
+### Database
+
+- MongoDB
+- Mongoose
+
+### Authentication
+
+- JWT
+- bcrypt
+
+### Tools
+
+- Git
+- GitHub
+- VS Code
+- Postman
+
+---
+
+# 📂 Project Structure
+
+```
+ScholarVerse
+│
+├── frontend
+│   ├── assets
+│   ├── css
+│   ├── js
+│   └── pages
+│
+├── backend
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── services
+│   └── utils
+│
+├── docs
+└── README.md
+```
+
+---
+
+# 🎯 Vision
+
+ScholarVerse aims to become an all-in-one student platform where learners can:
+
+- 📚 Plan their studies
+- 🎮 Stay motivated through gamification
+- 📈 Track academic progress
+- 👥 Learn with the community
+- 💼 Discover career opportunities
+- 🤖 Get AI-powered study assistance
+
+---
+
+# 📅 Roadmap
+
+## Phase 1 ✅
+- Landing Page
+- Authentication
+- Dashboard
+- Planner
+- Leaderboard
+
+## Phase 2 🚧
+- Achievements
+- Profile
+- Notifications
+
+## Phase 3
+- Community
+- Career Hub
+- AI Study Coach
+- Admin Panel
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!

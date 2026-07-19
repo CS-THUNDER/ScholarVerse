@@ -595,61 +595,91 @@ Author: Sudip Pattanayak
 
     display:grid;
 
-    grid-template-columns:
-
-    70px
-
-    70px
-
-    1fr
-
-    120px
-
-    100px
-
-    120px;
+    grid-template-columns:70px 1fr 90px 120px;
 
     align-items:center;
 
-    padding:18px 20px;
+    gap:20px;
 
-    border-radius:18px;
+    min-height:78px;
 
-    background:#111827;
+    background:#141c2b;
 
-    transition:.3s;
+    border:1px solid rgba(255,255,255,.05);
 
-    cursor:pointer;
+    border-radius:14px;
+
+    padding:0 22px;
+
+    transition:all .25s ease;
+
+}
+
+.leaderboard-row{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.leaderboard-row::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:#00d26a;
+
+    opacity:0;
+
+    transition:.25s;
+
+}
+
+.leaderboard-row:hover::before{
+
+    opacity:1;
 
 }
 
 .leaderboard-row:hover{
 
-    background:#182132;
-
     transform:translateX(6px);
+
+    box-shadow:0 12px 24px rgba(0,0,0,.35);
 
 }
 
 .rank{
 
-    font-size:22px;
+    font-size:26px;
 
-    font-weight:700;
+    font-weight:800;
 
     color:#facc15;
+
+    /* text-align:center; */
 
 }
 
 .rank-avatar{
 
-    width:52px;
+    width:46px;
 
-    height:52px;
+    height:46px;
 
     border-radius:50%;
 
-    background:#00d26a;
+    background:linear-gradient(135deg,#00e676,#00b85d);
 
     display:flex;
 
@@ -657,9 +687,13 @@ Author: Sudip Pattanayak
 
     align-items:center;
 
-    color:white;
+    color:#fff;
 
-    font-weight:bold;
+    font-size:18px;
+
+    font-weight:700;
+
+    box-shadow:0 4px 12px rgba(0,210,106,.25);
 
 }
 
@@ -669,21 +703,35 @@ Author: Sudip Pattanayak
 
     align-items:center;
 
-    gap:15px;
+    gap:14px;
+
+    min-width:0;
 
 }
 
 .student-info h4{
 
+    margin:0;
+
     color:white;
 
-    margin-bottom:4px;
+    font-size:18px;
+
+    font-weight:700;
+
+    line-height:1.2;
 
 }
 
 .student-info small{
 
-    color:#9ca3af;
+    color:#8fa0b8;
+
+    font-size:13px;
+
+    margin-top:4px;
+
+    display:block;
 
 }
 
@@ -705,27 +753,45 @@ Author: Sudip Pattanayak
 
 .level-badge{
 
-    background:#00d26a;
+    display:inline-flex;
 
-    color:white;
+    justify-content:center;
 
-    padding:8px 14px;
+    align-items:center;
+
+    width:68px;
+
+    height:30px;
 
     border-radius:999px;
 
-    text-align:center;
+    background:rgba(59,130,246,.12);
 
-    font-weight:600;
+    border:1px solid rgba(59,130,246,.25);
+
+    color:#6cb6ff;
+
+    font-size:12px;
+
+    font-weight:700;
 
 }
 
 .xp{
 
-    color:#facc15;
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    font-size:17px;
 
     font-weight:700;
 
-    font-size:18px;
+    color:#ffd54a;
+
+    white-space:nowrap;
 
 }
 
@@ -753,15 +819,13 @@ Author: Sudip Pattanayak
 
     flex-direction:column;
 
-    gap:14px;
-
-    max-height:560px;
+    gap:12px;
 
     overflow-y:auto;
 
-    overflow-x:hidden;
+    max-height:560px;
 
-    padding-right:8px;
+    padding-right:6px;
 
 }
 
@@ -863,25 +927,23 @@ Author: Sudip Pattanayak
 
     display:grid;
 
-    grid-template-columns:70px 1fr 100px 100px;
+    grid-template-columns:90px 1fr 175px 40px;
 
-    padding:16px 20px;
+    align-items:center;
 
-    color:#9ca3af;
+    padding:0 24px 16px;
 
-    font-size:13px;
+    margin-bottom:8px;
 
-    font-weight:600;
+    color:#7f8aa3;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    font-size:12px;
 
-    position:sticky;
+    font-weight:700;
 
-    top:0;
+    letter-spacing:.6px;
 
-    background:#1b2232;
-
-    z-index:10;
+    text-transform:uppercase;
 
 }
 
@@ -891,4 +953,17 @@ Author: Sudip Pattanayak
 
     background:#182132;
 
+}
+
+.you-badge{
+    display:inline-flex;
+    align-items:center;
+    margin-left:8px;
+    padding:2px 8px;
+    border-radius:999px;
+    background:#00d26a;
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.5px;
 }

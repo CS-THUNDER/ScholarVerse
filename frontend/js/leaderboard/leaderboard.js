@@ -131,10 +131,10 @@ function updatePodiumCard(position, user, season) {
   document.getElementById(`${position}Course`).textContent =
     user.course || "Student";
 
-  const seasonXP = user.xp;
+  const seasonXP = user.xp ?? 0;
 
   document.getElementById(`${position}XP`).textContent =
-    `Lv ${user.level} • ${seasonXP} XP`;
+    `Lv ${user.level ?? 0} • ${seasonXP ?? 0} XP`;
 }
 
 /*=========================================
@@ -188,7 +188,7 @@ function renderRanking(users,season){
 
 function createRow(user, rank, isMe, season) {
 
- const seasonXP = user.xp;
+ const seasonXP = user.xp ?? 0;
 
   return `
 
@@ -214,7 +214,7 @@ function createRow(user, rank, isMe, season) {
 
                         ${user.fullName}
 
-                        ${isMe ? " ⭐ You" : ""}
+                        ${isMe ? '<span class="you-badge">YOU</span>' : ""}
 
                     </h4>
 
@@ -232,7 +232,7 @@ function createRow(user, rank, isMe, season) {
 
                 <span class="level-badge">
 
-                    Lv ${user.level}
+                    Lv ${user.level ?? 0}
 
                 </span>
 
@@ -240,9 +240,9 @@ function createRow(user, rank, isMe, season) {
 
             <div class="xp">
 
-                ⭐ ${seasonXP}
+    ⭐ ${seasonXP} XP
 
-            </div>
+</div>
 
         </div>
 
@@ -256,7 +256,7 @@ function createRow(user, rank, isMe, season) {
 function updateJourney(data, season) {
   document.getElementById("userRank").textContent = "#" + data.currentUserRank;
 
-  const seasonXP = data.currentUser.xp;
+  const seasonXP = data.currentUser?.xp ?? 0;
 
   document.getElementById("journeyXP").textContent = `⭐ ${seasonXP} XP`;
 
